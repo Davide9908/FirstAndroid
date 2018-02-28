@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void error(View v){
         ((TextInputLayout)findViewById(R.id.inputlayout)).setError("a caso");
-        ((TextInputLayout)findViewById(R.id.inputlayout)).setError("a caso");
+        ((TextInputLayout)findViewById(R.id.inputlayout2)).setError("a caso");
         ((TextInputEditText)findViewById(R.id.textKilometri)).setError("a caso");
 
     }
