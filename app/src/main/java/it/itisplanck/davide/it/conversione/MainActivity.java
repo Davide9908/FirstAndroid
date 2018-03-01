@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this,"ciao",Toast.LENGTH_LONG).show();
         if(((RadioButton)findViewById(R.id.radioButton3)).isChecked()) {
             Toast.makeText(this,"ciao2",Toast.LENGTH_LONG).show();
-            if (((TextInputEditText)findViewById(R.id.metri)).getText().equals("")) {
+            if (((TextInputEditText)findViewById(R.id.metri)).getText().toString().equals("")) {
                 ((TextInputEditText) findViewById(R.id.metri)).setError(getString(R.string.Vuoto));
                 ((TextInputLayout)findViewById(R.id.inputlayout2)).setError(getString(R.string.Vuoto));
             }
