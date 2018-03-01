@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,10 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void error(View v){
-        ((TextInputLayout)findViewById(R.id.inputlayout)).setError("a caso");
-        ((TextInputLayout)findViewById(R.id.inputlayout2)).setError("a caso");
-        ((TextInputEditText)findViewById(R.id.textKilometri)).setError("a caso");
-
+    public void convert(View v){
+        Toast.makeText(this,"ciao",Toast.LENGTH_LONG).show();
+        if(((RadioButton)findViewById(R.id.radioButton3)).isChecked()) {
+            Toast.makeText(this,"ciao2",Toast.LENGTH_LONG).show();
+            if (((TextInputEditText)findViewById(R.id.metri)).getText().equals("")) {
+                ((TextInputEditText) findViewById(R.id.metri)).setError(getString(R.string.Vuoto));
+                ((TextInputLayout)findViewById(R.id.inputlayout2)).setError(getString(R.string.Vuoto));
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Conversione</string>
     <string name="Pulsante">Converti</string>
+    <string name="km">Kilometri</string>
+    <string name="M">Metri</string>
+    <string name="Vuoto">Campo vuoto</string>
 </resources>

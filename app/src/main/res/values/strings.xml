@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Conversione</string>
+    <string name="app_name" translatable="false">Conversione</string>
     <string name="Pulsante">Convert</string>
+    <string name="km">Kilometers</string>
+    <string name="M">Meters</string>
+    <string name="toM" translatable="false">Km -> M</string>
+    <string name="toKm" translatable="false">M -> Km</string>
+    <string name="Vuoto">Empty set</string>
 </resources>
