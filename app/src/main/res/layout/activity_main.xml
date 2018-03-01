@@ -77,7 +77,9 @@
                 android:id="@+id/metriInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/M" />
+                android:hint="@string/M"
+                android:inputType="numberDecimal"
+                />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -91,7 +93,8 @@
                 android:id="@+id/kilometriInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/km" />
+                android:hint="@string/km"
+                android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
