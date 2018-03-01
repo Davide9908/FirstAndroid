@@ -17,12 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void convert(View v){
-        Toast.makeText(this,"ciao",Toast.LENGTH_LONG).show();
         if(((RadioButton)findViewById(R.id.radioButton3)).isChecked()) {
-            Toast.makeText(this,"ciao2",Toast.LENGTH_LONG).show();
-            if (((TextInputEditText)findViewById(R.id.metri)).getText().toString().equals("")) {
-                ((TextInputEditText) findViewById(R.id.metri)).setError(getString(R.string.Vuoto));
-                ((TextInputLayout)findViewById(R.id.inputlayout2)).setError(getString(R.string.Vuoto));
+            if (((TextInputEditText)findViewById(R.id.metriInput)).getText().toString().equals("")) {
+                ((TextInputEditText) findViewById(R.id.metriInput)).setError(getString(R.string.Vuoto));
+                ((TextInputLayout)findViewById(R.id.layoutMetri)).setError(getString(R.string.Vuoto));
             }
         }
     }
