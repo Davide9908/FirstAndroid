@@ -77,15 +77,15 @@ public class MainActivity extends AppCompatActivity {
                 ((TextInputLayout)findViewById(R.id.layoutMiglia)).setError(getString(R.string.Vuoto));
             }
             else {
-                    try{
-                        double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.migliaInput)).getText().toString());
-                        n*=1.60934;
-                        ((TextInputEditText)findViewById(R.id.kilometriInput)).setText(""+n);
-                    }
-                    catch (Exception e){
-                        Toast.makeText(getApplicationContext(),"Numero inserito non corretto",Toast.LENGTH_SHORT).show();
-                    }
-
+                ((TextInputLayout) findViewById(R.id.layoutMiglia)).setErrorEnabled(false);
+                try{
+                    double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.migliaInput)).getText().toString());
+                    n*=1.60934;
+                    ((TextInputEditText)findViewById(R.id.kilometriInput)).setText(""+n);
+                }
+                catch (Exception e){
+                    Toast.makeText(getApplicationContext(),"Numero inserito non corretto",Toast.LENGTH_SHORT).show();
+                }
             }
         }
         else{
@@ -95,14 +95,15 @@ public class MainActivity extends AppCompatActivity {
                 ((TextInputLayout)findViewById(R.id.layoutKilometri)).setError(getString(R.string.Vuoto));
             }
             else {
-                    try{
-                        double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.kilometriInput)).getText().toString());
-                        n*=0.621371;
-                        ((TextInputEditText)findViewById(R.id.migliaInput)).setText(""+n);
-                    }
-                    catch (Exception e){
-                        Toast.makeText(getApplicationContext(),"Numero inserito non corretto",Toast.LENGTH_SHORT).show();
-                    }
+                ((TextInputLayout) findViewById(R.id.layoutKilometri)).setErrorEnabled(false);
+                try{
+                    double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.kilometriInput)).getText().toString());
+                    n*=0.621371;
+                    ((TextInputEditText)findViewById(R.id.migliaInput)).setText(""+n);
+                }
+                catch (Exception e){
+                    Toast.makeText(getApplicationContext(),"Numero inserito non corretto",Toast.LENGTH_SHORT).show();
+                }
 
             }
         }
