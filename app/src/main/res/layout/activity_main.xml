@@ -67,19 +67,18 @@
         app:layout_constraintTop_toTopOf="parent" android:orientation="horizontal" android:baselineAligned="false">
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/layoutMetri"
+            android:id="@+id/layoutMiglia"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:layout_weight="1">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/metriInput"
+                android:id="@+id/migliaInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/M"
-                android:inputType="numberDecimal"
-                />
+                android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout

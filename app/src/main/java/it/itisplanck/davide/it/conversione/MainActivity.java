@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ((TextInputEditText) findViewById(R.id.metriInput)).addTextChangedListener(new TextWatcher() {
+        ((TextInputEditText) findViewById(R.id.migliaInput)).addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (((RadioButton) findViewById(R.id.radioButton3)).isChecked()) {
-                    if (((TextInputEditText) findViewById(R.id.metriInput)).getText().toString().equals("")) {
-                        ((TextInputEditText) findViewById(R.id.metriInput)).setError(getString(R.string.Vuoto));
-                        ((TextInputLayout) findViewById(R.id.layoutMetri)).setError(getString(R.string.Vuoto));
-                        if ((findViewById(R.id.metriInput)).requestFocus())
+                    if (((TextInputEditText) findViewById(R.id.migliaInput)).getText().toString().equals("")) {
+                        ((TextInputEditText) findViewById(R.id.migliaInput)).setError(getString(R.string.Vuoto));
+                        ((TextInputLayout) findViewById(R.id.layoutMiglia)).setError(getString(R.string.Vuoto));
+                        if ((findViewById(R.id.migliaInput)).requestFocus())
                             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_MODE_CHANGED);
                     }
                     else
-                        ((TextInputLayout) findViewById(R.id.layoutMetri)).setErrorEnabled(false);
+                        ((TextInputLayout) findViewById(R.id.layoutMiglia)).setErrorEnabled(false);
                 }
             }
         });
@@ -72,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public void convert(View v){
         if(((RadioButton)findViewById(R.id.radioButton3)).isChecked()) {
-            if (((TextInputEditText)findViewById(R.id.metriInput)).getText().toString().equals("")) {
-                ((TextInputEditText) findViewById(R.id.metriInput)).setError(getString(R.string.Vuoto));
-                ((TextInputLayout)findViewById(R.id.layoutMetri)).setError(getString(R.string.Vuoto));
+            if (((TextInputEditText)findViewById(R.id.migliaInput)).getText().toString().equals("")) {
+                ((TextInputEditText) findViewById(R.id.migliaInput)).setError(getString(R.string.Vuoto));
+                ((TextInputLayout)findViewById(R.id.layoutMiglia)).setError(getString(R.string.Vuoto));
             }
             else {
                     try{
-                        double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.metriInput)).getText().toString());
-                        n/=1000;
+                        double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.migliaInput)).getText().toString());
+                        n*=1.60934;
                         ((TextInputEditText)findViewById(R.id.kilometriInput)).setText(""+n);
                     }
                     catch (Exception e){
@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
             else {
                     try{
                         double n=Double.parseDouble(((TextInputEditText)findViewById(R.id.kilometriInput)).getText().toString());
-                        n*=1000;
-                        ((TextInputEditText)findViewById(R.id.metriInput)).setText(""+n);
+                        n*=0.621371;
+                        ((TextInputEditText)findViewById(R.id.migliaInput)).setText(""+n);
                     }
                     catch (Exception e){
                         Toast.makeText(getApplicationContext(),"Numero inserito non corretto",Toast.LENGTH_SHORT).show();

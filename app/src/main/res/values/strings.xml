@@ -2,9 +2,9 @@
     <string name="app_name" translatable="false">Conversione</string>
     <string name="Pulsante">Convert</string>
     <string name="km">Kilometers</string>
-    <string name="M">Meters</string>
-    <string name="toM" translatable="false">Km -> M</string>
-    <string name="toKm" translatable="false">M -> Km</string>
+    <string name="M">Miles</string>
+    <string name="toM">Km -> Miles</string>
+    <string name="toKm">Miles -> Km</string>
     <string name="Vuoto">Empty set</string>
     <item name="visible" type="id"/>
     <item name="masked" type="id"/>

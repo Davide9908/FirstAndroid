@@ -2,6 +2,8 @@
 <resources>
     <string name="Pulsante">Converti</string>
     <string name="km">Kilometri</string>
-    <string name="M">Metri</string>
+    <string name="M">Miglia</string>
     <string name="Vuoto">Campo vuoto</string>
+    <string name="toM">Km -> Miglia</string>
+    <string name="toKm">Miglia -> Km</string>
 </resources>
