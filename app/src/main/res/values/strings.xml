@@ -8,4 +8,5 @@
     <string name="Vuoto">Empty set</string>
     <item name="visible" type="id"/>
     <item name="masked" type="id"/>
+    <string name="flash" translatable="false">Flash</string>
 </resources>

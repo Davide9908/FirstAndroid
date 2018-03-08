@@ -1,5 +1,8 @@
 package it.itisplanck.davide.it.conversione;
 
+import android.graphics.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +10,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RadioButton;
@@ -109,5 +115,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        Log.i("luce", "qualcosa non funziona");
+        switch (item.getItemId()) {
+
+            case R.id.luce:
+                CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
+                try {
+                    mCameraManager.setTorchMode(mCameraManager.getCameraIdList()[0], true);
+                } catch (CameraAccessException e) {
+                    Log.e("luce", "qualcosa non funziona");
+                }
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+}
