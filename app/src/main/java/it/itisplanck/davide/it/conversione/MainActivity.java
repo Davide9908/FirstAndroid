@@ -139,4 +139,13 @@ public class MainActivity extends AppCompatActivity {
                 return super.onContextItemSelected(item);
         }
     }
+    public void flash(MenuItem item){
+        Log.i("ciao","entrato");
+        CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
+        try {
+            mCameraManager.setTorchMode(mCameraManager.getCameraIdList()[0], true);
+        } catch (CameraAccessException e) {
+            Log.e("luce", "qualcosa non funziona");
+        }
+    }
 }
