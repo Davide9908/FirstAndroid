@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
+   <!--<item
         android:id="@+id/luce"
         android:checkable="false"
         android:checked="false"
@@ -12,5 +12,11 @@
         android:onClick="flash"
         android:title="@string/flash"
         android:visible="true"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" />-->
+    <item
+        android:id="@+id/myswitch"
+        android:actionLayout="@layout/switch_layout"
+        android:title=""
+        android:visible="true"
+        app:showAsAction="always" />
 </menu>

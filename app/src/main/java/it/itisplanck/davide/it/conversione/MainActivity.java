@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
+   /* @Override
     public boolean onContextItemSelected(MenuItem item) {
         Log.i("luce", "qualcosa non funziona");
         switch (item.getItemId()) {
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onContextItemSelected(item);
         }
-    }
+    }*/
     public void flash(MenuItem item){
         Log.i("ciao","entrato");
         CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
