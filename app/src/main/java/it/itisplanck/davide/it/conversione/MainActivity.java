@@ -19,7 +19,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static boolean torchmode=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,31 +119,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
+        MenuItem item = menu.findItem(R.id.myswitch);
+        item.setActionView(R.layout.switch_layout);
         return true;
     }
-
-   /* @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        Log.i("luce", "qualcosa non funziona");
-        switch (item.getItemId()) {
-
-            case R.id.luce:
-                CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
-                try {
-                    mCameraManager.setTorchMode(mCameraManager.getCameraIdList()[0], true);
-                } catch (CameraAccessException e) {
-                    Log.e("luce", "qualcosa non funziona");
-                }
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }*/
-    public void flash(MenuItem item){
+    public void flash(View v){
         Log.i("ciao","entrato");
         CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
         try {
-            mCameraManager.setTorchMode(mCameraManager.getCameraIdList()[0], true);
+            mCameraManager.setTorchMode(mCameraManager.getCameraIdList()[0], !torchmode);
+            torchmode=!torchmode;
         } catch (CameraAccessException e) {
             Log.e("luce", "qualcosa non funziona");
         }

@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
+<menu
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <!--<item
-        android:id="@+id/luce"
-        android:checkable="false"
-        android:checked="false"
-        android:enabled="true"
-        android:icon="@drawable/ic_highlight"
-        android:onClick="flash"
-        android:title="@string/flash"
-        android:visible="true"
-        app:showAsAction="ifRoom" />-->
     <item
         android:id="@+id/myswitch"
-        android:actionLayout="@layout/switch_layout"
-        android:title=""
+        android:title="@string/flash"
         android:visible="true"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 </menu>
