@@ -15,7 +15,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ((TextInputEditText) findViewById(R.id.migliaInput)).addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
     public void convert(View v){
         if(((RadioButton)findViewById(R.id.radioButton3)).isChecked()) {
@@ -121,9 +125,21 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu,menu);
         MenuItem item = menu.findItem(R.id.myswitch);
         item.setActionView(R.layout.switch_layout);
+        ((Switch)item.getActionView().findViewById(R.id.switchid)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
+                try {
+                    mCameraManager.setTorchMode(mCameraManager.getCameraIdList()[0], !torchmode);
+                    torchmode=!torchmode;
+                } catch (CameraAccessException e) {
+                    Log.e("luce", "qualcosa non funziona");
+                }
+            }
+        });
         return true;
     }
-    public void flash(View v){
+   /* public void flash(View v){
         Log.i("ciao","entrato");
         CameraManager mCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
         try {
@@ -132,5 +148,5 @@ public class MainActivity extends AppCompatActivity {
         } catch (CameraAccessException e) {
             Log.e("luce", "qualcosa non funziona");
         }
-    }
+    }*/
 }
